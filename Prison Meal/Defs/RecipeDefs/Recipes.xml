@@ -1,0 +1,263 @@
+<RecipeDefs>
+
+  <RecipeDef Name="CookMealPrison">
+    <defName>CookMealPrison</defName>
+    <label>cook prison meal</label>
+    <description>Cooks a unsavory prison meal from one ingredient.</description>
+    <jobString>Cooking prison meal.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+	<workAmount>300</workAmount>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>FoodRaw</li>
+          </categories>
+        </filter>
+        <count>0.4</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealPrison>1</MealPrison>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedSpecialFilters>
+        <li>AllowPlantFood</li>
+      </disallowedSpecialFilters>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+	   <ThingDefs>
+        <li>RawPotatoes</li>
+		<li>RawCorn</li>
+		<li>RawRice</li>
+      </ThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+	<RecipeDef ParentName="CookMealPrison">
+		<defName>CookMealPrisonCampfire</defName>
+		      <recipeUsers>
+         <li>Campfire</li>
+      </recipeUsers>
+    <workAmount>900</workAmount> <!-- other meals use WorkToMake stat -->
+	</RecipeDef>
+	
+	<RecipeDef ParentName="CookMealPrison">
+		<defName>CookMealPrisonStove</defName>
+		<recipeUsers>
+         <li>CookStove</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef Name="CookMealPrison2">
+    <defName>CookMealPrison2</defName>
+    <label>cook 2 prison meals</label>
+    <description>Cooks two unsavory prison meals from one ingredient.</description>
+    <jobString>Cooking prison meal.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+	<recipeUsers>
+         <li>CookStove</li>
+      </recipeUsers>
+    <effectWorking>Cook</effectWorking>
+		<workAmount>600</workAmount>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>FoodRaw</li>
+          </categories>
+        </filter>
+        <count>0.8</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealPrison>2</MealPrison>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedSpecialFilters>
+        <li>AllowPlantFood</li>
+      </disallowedSpecialFilters>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+	   <ThingDefs>
+        <li>RawPotatoes</li>
+		<li>RawCorn</li>
+		<li>RawRice</li>
+      </ThingDefs>
+      <categories>
+      </categories>
+      <exceptedCategories>
+      </exceptedCategories>
+      <exceptedThingDefs>
+      </exceptedThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+	
+	
+	<RecipeDef>
+		<defName>CookMealNutraloaf</defName>
+		<label>make nutraloaf</label>
+		<description>C... Makes a slab of something out of "various" ingredients.</description>
+		<jobString>Making nutraloaf.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<workAmount>150</workAmount>
+		<recipeUsers>
+         <li>CookStove</li>
+      </recipeUsers>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>FoodRaw</li>
+					</categories>
+				</filter>
+				<count>4</count>
+			</li>
+			<li>
+				<filter>
+					<ThingDefs>
+						<li>WoodLog</li>
+						<li>Hay</li>
+						<li>Cloth</li>
+						<li>HerbalMedicine</li>
+						<li>RawHops</li>
+					</ThingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<products>
+      <MealNutraloaf>1</MealNutraloaf>
+    </products>
+		<fixedIngredientFilter>
+			<categories>
+				<li>FoodRaw</li>
+			</categories>
+			<ThingDefs>
+				<li>RawPotatoes</li>
+				<li>RawCorn</li>
+				<li>RawRice</li>
+				<li>WoodLog</li>
+				<li>Hay</li>
+				<li>Cloth</li>
+				<li>HerbalMedicine</li>
+				<li>RawHops</li>
+			</ThingDefs>
+      <disallowedSpecialFilters>
+      </disallowedSpecialFilters>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<ThingDefs>
+				<li>RawPotatoes</li>
+				<li>RawCorn</li>
+				<li>RawRice</li>
+				<li>WoodLog</li>
+				<li>Hay</li>
+				<li>Cloth</li>
+				<li>RawHops</li>
+			</ThingDefs>
+			<categories>
+			</categories>
+      <exceptedCategories>
+      </exceptedCategories>
+      <exceptedThingDefs>
+		</exceptedThingDefs>
+		</defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+	
+	<RecipeDef>
+		<defName>CookMealNutraloaf5</defName>
+		<label>make 5 nutraloaf</label>
+		<description>C... Makes 5 slabs of something out of "various" ingredients.</description>
+		<jobString>Making nutraloaf.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<workAmount>750</workAmount>
+		<recipeUsers>
+         <li>CookStove</li>
+      </recipeUsers>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>FoodRaw</li>
+					</categories>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<ThingDefs>
+						<li>WoodLog</li>
+						<li>Hay</li>
+						<li>Cloth</li>
+						<li>HerbalMedicine</li>
+						<li>RawHops</li>
+					</ThingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<products>
+      <MealNutraloaf>5</MealNutraloaf>
+    </products>
+		<fixedIngredientFilter>
+			<categories>
+				<li>FoodRaw</li>
+			</categories>
+			<ThingDefs>
+				<li>RawPotatoes</li>
+				<li>RawCorn</li>
+				<li>RawRice</li>
+				<li>WoodLog</li>
+				<li>Hay</li>
+				<li>Cloth</li>
+				<li>HerbalMedicine</li>
+				<li>RawHops</li>
+			</ThingDefs>
+      <disallowedSpecialFilters>
+      </disallowedSpecialFilters>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<ThingDefs>
+				<li>RawPotatoes</li>
+				<li>RawCorn</li>
+				<li>RawRice</li>
+				<li>WoodLog</li>
+				<li>Hay</li>
+				<li>Cloth</li>
+				<li>RawHops</li>
+			</ThingDefs>
+			<categories>
+			</categories>
+      <exceptedCategories>
+      </exceptedCategories>
+      <exceptedThingDefs>
+		</exceptedThingDefs>
+		</defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+	
+	
+</RecipeDefs>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Resources>
+ 
+ 
+ 
+  <ThingDef Name="MealBase" Abstract="True">
+    <label>meal</label>
+    <thingClass>Meal</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>10</stackLimit>
+    <tickerType>Rare</tickerType>
+    <description>"Meal lacks desc."</description>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <thingCategories>
+      <li>FoodMeals</li>
+    </thingCategories>
+    <alwaysHaulable>true</alwaysHaulable>
+    <comps>
+      <li>
+        <compClass>CompForbiddable</compClass>
+      </li>
+    </comps>
+    <pathCost>15</pathCost>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <ingestible>
+      <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="MealBase" Name="MealRottable6" Abstract="True">
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <compClass>CompRottable</compClass>
+        <daysToRotStart>6</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+ 
+   <ThingDef ParentName="MealBase" Name="MealRottable8" Abstract="True">
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <compClass>CompRottable</compClass>
+        <daysToRotStart>8</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+ 
+ 
+ 
+  <ThingDef ParentName="MealRottable6">
+    <defName>MealPrison</defName>
+    <label>prison meal</label>
+    <description>Nutrition-lacking prison meal.</description>
+    <graphicData>
+      <texPath>Prison</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <DeteriorationRate>8</DeteriorationRate>
+      <MarketValue>10</MarketValue>
+    </statBases>
+	<stackLimit>1</stackLimit>
+    <ingestible>
+      <preferability>Awful</preferability>
+      <nutrition>0.80</nutrition>
+      <joy>-0.05</joy>
+      <ingestedDirectThought>AtePrisonMeal</ingestedDirectThought>
+      <eatEffect>EatVegetarian</eatEffect>
+      <soundEat>Meal_Eat</soundEat>
+    </ingestible>
+  </ThingDef>
+ 
+   <ThingDef ParentName="MealRottable8">
+    <defName>MealNutraloaf</defName>
+    <label>slab of nutraloaf</label>
+    <description>A slab of baked ...something. Just enough to barely survive, and utterly inedible.</description>
+    <graphicData>
+      <texPath>Nutraloaf</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <DeteriorationRate>5</DeteriorationRate>
+      <MarketValue>2</MarketValue>
+    </statBases>
+	<stackLimit>1</stackLimit>
+    <ingestible>
+      <preferability>Awful</preferability>
+      <nutrition>0.50</nutrition>
+      <joy>-0.10</joy>
+      <ingestedDirectThought>AteNutraloaf</ingestedDirectThought>
+      <eatEffect>EatVegetarian</eatEffect>
+      <soundEat>Meal_Eat</soundEat>
+    </ingestible>
+  </ThingDef>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</Resources>
